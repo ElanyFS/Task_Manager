@@ -2,10 +2,15 @@
 
 namespace app\Http\Controllers;
 
+use app\Http\Traits\Template;
+
 class HomeController
 {
+
+    use Template;
+
     public function index(){
-        echo 'Index-Home';
+        $this->view('home', []);
     }
 
     public function show(){
