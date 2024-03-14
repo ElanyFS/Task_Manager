@@ -1,0 +1,17 @@
+{
+    "name": "ellan/task_manager",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Elany Ferreira",
+            "email": "ellanysouza08@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
