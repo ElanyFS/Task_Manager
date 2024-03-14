@@ -3,6 +3,7 @@
 namespace app\Http\Controllers;
 
 use app\Http\Traits\Template;
+use app\Models\Database\Connection;
 
 class HomeController
 {
