@@ -1,4 +1,5 @@
-<?php $this->layout('../master', ['title' => 'Home']) ?>
+<?php
+$this->layout('../master', ['title' => 'Home']) ?>
 
 <div class="container" id="container">
     <div class="signin-signup">

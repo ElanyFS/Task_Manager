@@ -2,6 +2,8 @@
 
 namespace app\Http\Providers;
 
+use app\Models\Database;
+
 class Validation
 {
     public static function validate($data)
@@ -20,11 +22,11 @@ class Validation
 
             foreach ($valuesMultiplos as $value) {
 
-               if(str_contains($value, ":")){
+                if (str_contains($value, ":")) {
                     [$value, $param] = explode(':', $value);
-               }
+                }
 
-               $result[$field]= self::$value($field, $param);
+                $result[$field] = self::$value($field, $param);
             }
         }
 
@@ -48,7 +50,15 @@ class Validation
 
     private static function email($field, $param)
     {
-        // VEricar no banco de dados
-        return filter_input(INPUT_POST, $field, FILTER_SANITIZE_EMAIL);
+        $value =  filter_input(INPUT_POST, $field, FILTER_SANITIZE_EMAIL);
+
+        $database = new Database;
+        $user = $database->byId($param, $field, $value);
+
+        if ($user) {
+            throw new \Exception("E-mail já cadastrado.");
+            return false;
+        }
+        return $value;
     }
 }
