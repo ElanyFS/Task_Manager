@@ -2,10 +2,13 @@
 
 namespace app\Http\Providers;
 
+use app\Http\Traits\CheckPassword;
 use app\Models\Database;
 
 class Validation
 {
+    use CheckPassword;
+
     public static function validate($data)
     {
         $param = '';
@@ -60,5 +63,11 @@ class Validation
             return false;
         }
         return $value;
+    }
+
+    private static function password($field){
+        $password = filter_input(INPUT_POST, $field, FILTER_SANITIZE_STRING);
+
+        return self::checker($password);
     }
 }

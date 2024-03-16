@@ -3,16 +3,16 @@ $this->layout('../master', ['title' => 'Home']) ?>
 
 <div class="container" id="container">
     <div class="signin-signup">
-        <form action="" class="sign-in-form">
+        <form action="/login/store" method="post" class="sign-in-form">
             <h2 class="title">Sign In</h2>
             <div class="input-field">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" placeholder="Username">
+                <input type="email" placeholder="Username" name="email">
             </div>
 
             <div class="input-field">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Password" name="password">
             </div>
 
             <input type="submit" value="Login" class="btn">

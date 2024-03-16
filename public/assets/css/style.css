@@ -10,7 +10,6 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: aquamarine;
 }
 
 .container {
@@ -58,13 +57,13 @@ form {
   padding: 0 10px;
 }
 
-form.sign-in-form{
+form.sign-in-form {
   opacity: 1;
   transition: 0.5s ease-in-out;
   transition-delay: 1s;
 }
 
-form.sign-up-form{
+form.sign-up-form {
   opacity: 0;
   transition: 0.5s ease-in-out;
   transition-delay: 1s;
@@ -207,7 +206,7 @@ a {
 
 /* .left-panel.imagem, */
 /* .left-panel.content { */
-  /* transform: translateX(-200%); Move o elemento no eixo x */
+/* transform: translateX(-200%); Move o elemento no eixo x */
 /* } */
 
 /* .right-panel.imagem,

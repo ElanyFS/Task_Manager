@@ -14,7 +14,7 @@ class HomeController
         $this->view('home', []);
     }
 
-    public function show(){
-        echo 'Home';
-    }
+    // public function show(){
+    //     echo 'Home';
+    // }
 }
