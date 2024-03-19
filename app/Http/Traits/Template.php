@@ -6,7 +6,7 @@ use League\Plates\Engine;
 
 trait Template
 {
-    public function view($view, $data)
+    public function view($view, $data = [])
     {
 
         $viewPath = dirname(__FILE__, 3) . "/Views/pages";

@@ -11,7 +11,7 @@ class HomeController
     use Template;
 
     public function index(){
-        $this->view('home', []);
+        $this->view('login', []);
     }
 
     // public function show(){
