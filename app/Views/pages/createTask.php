@@ -2,7 +2,7 @@
 
 <section>
     <div class="formulario">
-        <a href="/home/home"><i class="fa-solid fa-reply fa-lg" style="color: #ffffff;"></i></a>
+        <a href="/home/show"><i class="fa-solid fa-reply fa-lg" style="color: #ffffff;"></i></a>
         <h2>Registrar atividade</h2>
         <form action="/task/store" method="post">
             <input type="hidden" name="userId" value="<?= user(LOGGED)->userId; ?>">

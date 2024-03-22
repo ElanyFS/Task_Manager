@@ -3,6 +3,7 @@
 namespace app\Models;
 
 use app\Models\Database\Connection;
+use Doctrine\Inflector\InflectorFactory;
 
 class Database
 {
@@ -31,6 +32,34 @@ class Database
         ]);
 
         return $prepare->fetch();
+    }
+
+    private function fieldFK($table, $field)
+    {
+        $inflector = InflectorFactory::create()->build();
+
+        $table = $inflector->singularize($table); // Retornar o nome da tabela no singular
+
+        $tableToSingularId = $table . ucfirst($field); // Retornar o nome da tabela no singular concatenado com o Id. Ex.: commentId
+
+        return $tableToSingularId;
+
+    }
+
+    public function innerJoinTable($table, $tableInner, $field, $value, $fields = '*'){
+
+        $idTable = $this->fieldFK($table, 'id');
+
+        $sql = "select {$tableInner}.name from {$table} inner join {$tableInner} on {$table}.{$idTable} = {$tableInner}.{$idTable} where {$table}.$field = :{$field}";
+
+        $prepare = $this->con->prepare($sql);
+        $prepare->execute([
+            $field => $value
+        ]);
+
+        return $prepare->fetchAll();
+
+        // var_dump($prepare->fetchAll());
     }
 
     public function create($table, $fields)

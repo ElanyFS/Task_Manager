@@ -33,7 +33,9 @@ class LoginController
 
         $_SESSION[LOGGED] = $user;
 
-        $this->view('index', []);
+        $logar = new HomeController;
+
+        $logar->show();
     }
 
     public function create()

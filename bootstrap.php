@@ -1,5 +1,7 @@
 <?php
+session_set_cookie_params(360);
 session_start();
+
 require "vendor/autoload.php";
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
