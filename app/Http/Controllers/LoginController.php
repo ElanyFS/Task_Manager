@@ -11,6 +11,10 @@ class LoginController
 {
     use Template;
 
+    public function index(){
+        $this->view('login', []);
+    }
+
     public function store()
     {
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);

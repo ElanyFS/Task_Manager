@@ -35,7 +35,6 @@ footer {
   width: 100%;
   bottom: 0;
   height: 3rem;
-  /* border-top: solid 1px #00436d; */
   box-shadow: 0 0px 3px 3px #3f627f;
 }
 
@@ -46,8 +45,6 @@ footer {
 }
 
 .navbar .link {
-  color: #fff;
-  border: solid 1px black;
   padding: 1%;
 }
 
@@ -56,6 +53,7 @@ footer {
   width: 50px;
   border-radius: 50px;
   text-align: center;
+  border: solid 1px #14537f;
 }
 
 .dataMes {

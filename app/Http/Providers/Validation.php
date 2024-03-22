@@ -42,6 +42,7 @@ class Validation
 
     public static function required($field)
     {
+
         if (!isset($_POST[$field]) || $_POST[$field] === '') {
             return false;
         }

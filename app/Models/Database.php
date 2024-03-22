@@ -15,8 +15,7 @@ class Database
     public function all($table)
     {
         $sql = "select * from {$table}";
-
-        $prepare = self::$con->prepare($sql);
+        $prepare = $this->con->prepare($sql);
         $prepare->execute();
 
         return $prepare->fetchAll();

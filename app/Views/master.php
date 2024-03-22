@@ -12,6 +12,7 @@
 
 <body>
     <?php require "includes/header.php"; ?>
+    
     <main>
         <?= $this->section('content') ?>
     </main>

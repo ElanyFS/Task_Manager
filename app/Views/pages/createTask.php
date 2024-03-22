@@ -2,6 +2,7 @@
 
 <section>
     <div class="formulario">
+        <a href="/home/home"><i class="fa-solid fa-reply fa-lg" style="color: #ffffff;"></i></a>
         <h2>Registrar atividade</h2>
         <form action="/task/store" method="post">
             <input type="hidden" name="userId" value="<?= user(LOGGED)->userId; ?>">
@@ -34,10 +35,11 @@
 
                 <div class="col-md-4">
                     <label for="inputEmail4" class="form-label">Categoria</label>
-                    <select name="category" id="">
-                        <option value="saude">Saúde</option>
-                        <option value="trabalho">Trabalho</option>
-                        <option value=""></option>
+                    <select name="categoryId" id="">
+                        <option value="">Selecione</option>
+                        <?php foreach ($data as $category) { ?>
+                            <option value="<?= $category->categoryId; ?>"><?= $category->name; ?></option>
+                        <?php } ?>
                     </select>
                 </div>
             </div>

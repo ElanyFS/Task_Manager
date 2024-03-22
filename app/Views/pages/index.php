@@ -3,7 +3,7 @@ $this->layout('../master', ['title' => 'Index']);?>
 
 <section>
     <div class="alert">
-        <h1>Alert</h1>
+        <h1>Alert: Atividades atrasadas</h1>
     </div>
 
     <div class="row-content">
@@ -84,6 +84,6 @@ $this->layout('../master', ['title' => 'Index']);?>
     </div>
 
     <div class="alert">
-        <h1>Alert</h1>
+        <h1>Alert: atividades mais recentes</h1>
     </div>
 </section>

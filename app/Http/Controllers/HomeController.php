@@ -3,7 +3,6 @@
 namespace app\Http\Controllers;
 
 use app\Http\Traits\Template;
-use app\Models\Database\Connection;
 
 class HomeController
 {
@@ -11,10 +10,11 @@ class HomeController
     use Template;
 
     public function index(){
-        $this->view('login', []);
+        $this->view('home', []);
     }
 
-    // public function show(){
-    //     echo 'Home';
-    // }
+    public function home(){
+        $this->view('index', []);
+    }
+
 }

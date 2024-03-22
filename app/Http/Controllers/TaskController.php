@@ -10,21 +10,25 @@ class TaskController
 {
     use Template;
 
-    public function show()
+    public function index()
     {
-        echo "Metodo Task";
+        $this->view('login', []);
     }
 
     public function create()
     {
-        $this->view('createTask');
+        $database = new Database;
+
+        $categories = $database->all('category');
+
+        $this->view('createTask', $categories);
     }
 
     public function store()
     {
         $validate = [
             'name'  => 'required',
-            'category' => 'required',
+            'categoryId' => 'required',
             'status' => 'required',
             'start_date' => 'required',
             'completion_date' => 'required',
@@ -33,10 +37,9 @@ class TaskController
             'priority' => 'required',
         ];
 
-        $create = new Database;
-
         $dados = Validation::validate($validate);
-        var_dump($dados);
+
+        $create = new Database;
 
         if (!$create) {
             echo "Preencha todos os campos.";
