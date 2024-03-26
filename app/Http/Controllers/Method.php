@@ -6,7 +6,6 @@ use app\Http\Traits\Uri;
 
 class Method
 {
-
     private $uri;
     private $method;
     use Uri;

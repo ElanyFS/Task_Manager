@@ -37,7 +37,7 @@
                     <label for="inputEmail4" class="form-label">Categoria</label>
                     <select name="categoryId" id="">
                         <option value="">Selecione</option>
-                        <?php foreach ($data as $category) { ?>
+                        <?php foreach ($categories as $category) { ?>
                             <option value="<?= $category->categoryId; ?>"><?= $category->name; ?></option>
                         <?php } ?>
                     </select>

@@ -14,6 +14,6 @@ trait Template
         $templates = new Engine($viewPath);
 
         // Render a template
-        echo $templates->render($view, ['data' => $data]);
+        echo $templates->render($view, $data);
     }
 }

@@ -21,7 +21,7 @@ class TaskController
 
         $categories = $database->all('category');
 
-        $this->view('createTask', $categories);
+        $this->view('createTask', ['categories'=>$categories]);
     }
 
     public function store()
@@ -45,6 +45,16 @@ class TaskController
             echo "Preencha todos os campos.";
         }
 
-        $create->create('task', $dados);
+        if($create->create('task', $dados)){
+            $index = new HomeController;
+            $index->show();
+        }
+    }
+
+    public function showCategory($request){
+        var_dump($request->parametro);die();
+        $tasks = new Database;
+        $taskList = $tasks->innerJoinTable('users', 'task', 'categoryId', $_SESSION[LOGGED]->userId, ['*']);
+
     }
 }
