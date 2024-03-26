@@ -43,14 +43,16 @@ class Database
         $tableToSingularId = $table . ucfirst($field); // Retornar o nome da tabela no singular concatenado com o Id. Ex.: commentId
 
         return $tableToSingularId;
-
     }
 
-    public function innerJoinTable($table, $tableInner, $field, $value, $fields = '*'){
+    public function innerJoinTable($table, $tableInner, $field, $value, $fields)
+    {
 
         $idTable = $this->fieldFK($table, 'id');
 
-        $sql = "select {$tableInner}.name from {$table} inner join {$tableInner} on {$table}.{$idTable} = {$tableInner}.{$idTable} where {$table}.$field = :{$field}";
+        $sql = "select ";
+        $sql .= implode(',', array_values($fields));
+        $sql .= " from {$table} inner join {$tableInner} on {$table}.{$idTable} = {$tableInner}.{$idTable} where {$table}.$field = :{$field}";
 
         $prepare = $this->con->prepare($sql);
         $prepare->execute([
@@ -58,8 +60,6 @@ class Database
         ]);
 
         return $prepare->fetchAll();
-
-        // var_dump($prepare->fetchAll());
     }
 
     public function create($table, $fields)
