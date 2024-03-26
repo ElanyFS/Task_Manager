@@ -153,6 +153,14 @@ a {
   border-color: #0956b7;
 }
 
+#error-message, #error-message-register{
+  color: red;
+}
+
+#success-message-register{
+  color: green;
+}
+
 /* .panels-container {
     position: absolute;
     top: 0;

@@ -7,31 +7,32 @@ use Doctrine\Inflector\InflectorFactory;
 
 class Database
 {
-    protected $con;
+    protected $connection;
 
     public function __construct()
     {
-        $this->con = Connection::connect();
+        $this->connection = Connection::connect();
     }
     public function all($table)
     {
         $sql = "select * from {$table}";
-        $prepare = $this->con->prepare($sql);
-        $prepare->execute();
+        
+        $statement  = $this->connection->prepare($sql);
+        $statement ->execute();
 
-        return $prepare->fetchAll();
+        return $statement ->fetchAll();
     }
 
     public function byId($table, $field, $value, $fields = '*')
     {
         $sql = "select {$fields} from {$table} where $field = :{$field}";
 
-        $prepare = $this->con->prepare($sql);
-        $prepare->execute([
+        $statement = $this->connection->prepare($sql);
+        $statement->execute([
             $field => $value
         ]);
 
-        return $prepare->fetch();
+        return $statement->fetch();
     }
 
     private function fieldFK($table, $field)
@@ -40,9 +41,8 @@ class Database
 
         $table = $inflector->singularize($table); // Retornar o nome da tabela no singular
 
-        $tableToSingularId = $table . ucfirst($field); // Retornar o nome da tabela no singular concatenado com o Id. Ex.: commentId
+        return $table . ucfirst($field); // Retornar o nome da tabela no singular concatenado com o Id. Ex.: commentId
 
-        return $tableToSingularId;
     }
 
     public function innerJoinTable($table, $tableInner, $field, $value, $fields)
@@ -54,12 +54,12 @@ class Database
         $sql .= implode(',', array_values($fields));
         $sql .= " from {$table} inner join {$tableInner} on {$table}.{$idTable} = {$tableInner}.{$idTable} where {$table}.$field = :{$field}";
 
-        $prepare = $this->con->prepare($sql);
-        $prepare->execute([
+        $statement  = $this->connection->prepare($sql);
+        $statement ->execute([
             $field => $value
         ]);
 
-        return $prepare->fetchAll();
+        return $statement ->fetchAll();
     }
 
     public function create($table, $fields)
@@ -68,7 +68,7 @@ class Database
         $sql .= implode(',', array_keys($fields)) . ") values (";
         $sql .= ":" . implode(', :', array_keys($fields)) . ")";
 
-        $prepare = $this->con->prepare($sql);
-        return $prepare->execute($fields);
+        $statement  = $this->connection->prepare($sql);
+        return $statement ->execute($fields);
     }
 }

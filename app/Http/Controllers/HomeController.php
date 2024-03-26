@@ -45,7 +45,7 @@ class HomeController
             }
 
             //Buscar 1 tarerfa mais recente
-            if ($menor_data === null || $taskValue->start_date > $maior_data) {
+            if ($maior_data === null || $taskValue->start_date > $maior_data) {
                 // Atualiza a menor data e a tarefa relacionada
                 $maior_data = $taskValue->start_date;
                 $taskMaiorData = $taskValue;
@@ -55,6 +55,7 @@ class HomeController
         $data_atual = date("Y-m-d");
 
         $taskLate = 'Sem tarefas atrasadas!';
+
         if ($taskMenorData->completion_date < $data_atual) {
             $taskLate = $taskMenorData->name;
         }

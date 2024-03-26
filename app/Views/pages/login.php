@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../assets/css/styleLogin.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/assets/js/app.js"></script>
     <script src="https://kit.fontawesome.com/bed932eb60.js" crossorigin="anonymous"></script>
 </head>
 
@@ -13,8 +15,11 @@
     <div class="container-pai">
         <div class="container" id="container">
             <div class="signin-signup">
-                <form action="/login/store" method="post" class="sign-in-form">
+                <form action="/login/store" method="post" class="sign-in-form" id="login-form">
                     <h2 class="title">Sign In</h2>
+
+                    <div id="error-message"></div>
+                    
                     <div class="input-field">
                         <i class="fa-solid fa-user"></i>
                         <input type="email" placeholder="Username" name="email">
@@ -49,8 +54,11 @@
                 </form>
 
                 <!-- Register -->
-                <form action="/login/create" method="post" class="sing-up-form">
+                <form action="/login/create" method="post" class="sing-up-form" id="register-form">
                     <h2 class="title">Sign Up</h2>
+
+                    <div class="" id="success-message-register"></div>
+                    <div class="" id="error-message-register"></div>
                     <div class="input-field">
                         <i class="fa-solid fa-user"></i>
                         <input type="text" placeholder="Username" name="name">
