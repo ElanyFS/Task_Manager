@@ -59,11 +59,6 @@ class LoginController
 
             $dados = Validation::validate($validate);
 
-            // if (!$dados) {
-            //     echo 'Preencha todos os campos';
-            //     die();
-            // }
-
             $create = new Database;
 
             $create->create('users', $dados);

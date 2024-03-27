@@ -16,11 +16,32 @@ class Database
     public function all($table)
     {
         $sql = "select * from {$table}";
-        
-        $statement  = $this->connection->prepare($sql);
-        $statement ->execute();
 
-        return $statement ->fetchAll();
+        $statement  = $this->connection->prepare($sql);
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
+
+
+    public function getById($table, $conditions, $fields = '*')
+    {
+        $params = [];
+
+        $sql = "select {$fields} from {$table} where";
+
+        foreach ($conditions as $field => $value) {
+            $sql .= " {$field} = :{$field} and";
+            $params[$field] = $value;
+        }
+
+        $sql = rtrim($sql, "and");
+
+        $statement = $this->connection->prepare($sql);
+
+        $statement->execute($params);
+
+        return $statement->fetchAll();
     }
 
     public function byId($table, $field, $value, $fields = '*')
@@ -47,7 +68,6 @@ class Database
 
     public function innerJoinTable($table, $tableInner, $field, $value, $fields)
     {
-
         $idTable = $this->fieldFK($table, 'id');
 
         $sql = "select ";
@@ -55,11 +75,11 @@ class Database
         $sql .= " from {$table} inner join {$tableInner} on {$table}.{$idTable} = {$tableInner}.{$idTable} where {$table}.$field = :{$field}";
 
         $statement  = $this->connection->prepare($sql);
-        $statement ->execute([
+        $statement->execute([
             $field => $value
         ]);
 
-        return $statement ->fetchAll();
+        return $statement->fetchAll();
     }
 
     public function create($table, $fields)
@@ -69,6 +89,6 @@ class Database
         $sql .= ":" . implode(', :', array_keys($fields)) . ")";
 
         $statement  = $this->connection->prepare($sql);
-        return $statement ->execute($fields);
+        return $statement->execute($fields);
     }
 }

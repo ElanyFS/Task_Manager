@@ -44,6 +44,7 @@ class Validation
     {
 
         if (!isset($_POST[$field]) || $_POST[$field] === '') {
+            throw new \Exception('Preencha todos os campos.');
             return false;
         }
 

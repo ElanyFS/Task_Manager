@@ -143,6 +143,7 @@ footer {
   flex-direction: column;
   background-color: #fff;
   margin: 10px;
+  width: 25%;
   height: 15rem;
   box-shadow: 4px 4px 4px #565656;
   border-radius: 5px;
@@ -376,4 +377,35 @@ body header .open .menu a {
   100% {
     opacity: 1;
   }
+}
+
+/* Tabela task */
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  box-shadow: 4px 4px 4px #565656;
+  color: #c3d2e4;
+}
+
+th {
+  color: #fff;
+  width: auto;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+  color: #1969ca;
+}
+
+a i {
+  text-decoration: none;
+  color: #1969ca;
 }

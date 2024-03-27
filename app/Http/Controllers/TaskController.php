@@ -5,6 +5,7 @@ namespace app\Http\Controllers;
 use app\Http\Providers\Validation;
 use app\Http\Traits\Template;
 use app\Models\Database;
+use Exception;
 
 class TaskController
 {
@@ -21,40 +22,44 @@ class TaskController
 
         $categories = $database->all('category');
 
-        $this->view('createTask', ['categories'=>$categories]);
+        $this->view('createTask', ['categories' => $categories]);
     }
 
     public function store()
     {
-        $validate = [
-            'name'  => 'required',
-            'categoryId' => 'required',
-            'status' => 'required',
-            'start_date' => 'required',
-            'completion_date' => 'required',
-            'description' => 'required',
-            'userId'  => 'required',
-            'priority' => 'required',
-        ];
+        try {
+            $validate = [
+                'name'  => 'required',
+                'categoryId' => 'required',
+                'status' => 'required',
+                'start_date' => 'required',
+                'completion_date' => 'required',
+                'description' => 'required',
+                'userId'  => 'required',
+                'priority' => 'required',
+            ];
 
-        $dados = Validation::validate($validate);
+            $dados = Validation::validate($validate);
 
-        $create = new Database;
+            $create = new Database;
 
-        if (!$create) {
-            echo "Preencha todos os campos.";
-        }
+            $create->create('task', $dados);
 
-        if($create->create('task', $dados)){
-            $index = new HomeController;
-            $index->show();
+            header('Location: /home/show');
+            exit;
+            
+        } catch (Exception $e) {
+            echo json_encode(array('success' => false, 'message' => $e->getMessage()));
+            exit;
         }
     }
 
-    public function showCategory($request){
-        var_dump($request->parametro);die();
+    public function showCategory($request)
+    {
         $tasks = new Database;
-        $taskList = $tasks->innerJoinTable('users', 'task', 'categoryId', $_SESSION[LOGGED]->userId, ['*']);
 
+        $tasks = $tasks->getById('task', ['userId' => $_SESSION[LOGGED]->userId, 'categoryId' => $request->parametro]);
+
+        $this->view('taskListCategory', ['task' => $tasks]);
     }
 }

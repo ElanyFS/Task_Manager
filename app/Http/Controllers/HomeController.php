@@ -25,6 +25,10 @@ class HomeController
         $tasks = new Database;
         $taskList = $tasks->innerJoinTable('users', 'task', 'userId', $_SESSION[LOGGED]->userId, ['*']);
 
+        if(empty($taskList)){
+            $this->view('index', ['taskListFive' => [], 'taskLate' => 'Sem tarefas atrasadas.', 'taskRecent' => '']);
+            exit;
+        }
         //Buscar as 5 tarefas mais recentes 
         $listFive = array_slice($taskList, 0, 5);
 

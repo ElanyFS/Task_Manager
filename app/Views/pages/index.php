@@ -19,14 +19,14 @@ $this->layout('../master', ['title' => 'Index']); ?>
                 <div class="col-group-line">
                     <h4>Trabalho</h4>
                     <div class="icon">
-                        <a href="/task/showCategory/trabalho"><i class="fa-solid fa-business-time fa-sm" style="color: #ffffff;"></i></i></a>
+                        <a href="/task/showCategory/1"><i class="fa-solid fa-business-time fa-sm" style="color: #ffffff;"></i></i></a>
                     </div>
                 </div>
 
                 <div class="col-group-line">
                     <h4>Lazer</h4>
                     <div class="icon">
-                        <a href="/task/create"><i class="fa-solid fa-umbrella-beach fa-sm" style="color: #ffffff;"></i></a>
+                        <a href="/task/showCategory/2"><i class="fa-solid fa-umbrella-beach fa-sm" style="color: #ffffff;"></i></a>
                     </div>
                 </div>
             </div>
@@ -35,19 +35,19 @@ $this->layout('../master', ['title' => 'Index']); ?>
                 <div class="col-group-line">
                     <h4>Estudo</h4>
                     <div class="icon">
-                        <a href="/task/create"><i class="fa-solid fa-desktop fa-sm" style="color: #ffffff;"></i></a>
+                        <a href="/task/showCategory/3"><i class="fa-solid fa-desktop fa-sm" style="color: #ffffff;"></i></a>
                     </div>
                 </div>
                 <div class="col-group-line">
                     <h4>Pessoal</h4>
                     <div class="icon">
-                        <a href="/task/create"><i class="fa-solid fa-tag fa-sm" style="color: #ffffff;"></i></a>
+                        <a href="/task/showCategory/4"><i class="fa-solid fa-tag fa-sm" style="color: #ffffff;"></i></a>
                     </div>
                 </div>
                 <div class="col-group-line">
                     <h4>Saúde</h4>
                     <div class="icon">
-                        <a href="/task/create"><i class="fa-solid fa-dumbbell fa-sm" style="color: #ffffff;"></i></a>
+                        <a href="/task/showCategory/5"><i class="fa-solid fa-dumbbell fa-sm" style="color: #ffffff;"></i></a>
                     </div>
                 </div>
             </div>
@@ -56,14 +56,14 @@ $this->layout('../master', ['title' => 'Index']); ?>
                 <div class="col-group-line">
                     <h4>Finanças</h4>
                     <div class="icon">
-                        <a href="/task/create"><i class="fa-solid fa-credit-card fa-sm" style="color: #ffffff;"></i></a>
+                        <a href="/task/showCategory/6"><i class="fa-solid fa-credit-card fa-sm" style="color: #ffffff;"></i></a>
                     </div>
                 </div>
 
                 <div class="col-group-line">
                     <h4>Projetos</h4>
                     <div class="icon">
-                        <a href="/task/create"><i class="fa-solid fa-code fa-sm" style="color: #ffffff;"></i></i></a>
+                        <a href="/task/showCategory/7"><i class="fa-solid fa-code fa-sm" style="color: #ffffff;"></i></i></a>
                     </div>
                 </div>
 
@@ -80,12 +80,15 @@ $this->layout('../master', ['title' => 'Index']); ?>
             <ul>
                 <?php foreach ($taskListFive as $task) { ?>
                     <li><i class="fa-thin fa-square fa-xs" style="color: #1969ca"></i> <?= $task->name; ?></li>
-                    <li><i class="fa-thin fa-square fa-xs" style="color: #1969ca"></i>TesteTeste</li>
                 <?php } ?>
             </ul>
         </div>
     </div>
     <div class="alert-recent">
-        <h1>Tarefa mais recente: <?= $taskRecent->name; ?></h1>
+        <h1>Tarefa mais recente: <?php if (!empty($taskRecent->name)) {
+                                        echo $taskRecent->name;
+                                    }else {echo 'Não a tarefas registradas.';}
+                                ?>
+        </h1>
     </div>
 </section>
