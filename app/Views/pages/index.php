@@ -70,7 +70,7 @@ $this->layout('../master', ['title' => 'Index']); ?>
                 <div class="col-group-line">
                     <h4>Concluídas</h4>
                     <div class="icon">
-                        <a href="/task/create"><i class="fa-solid fa-check fa-sm" style="color: #ffffff;"></i></a>
+                        <a href="/task/showTaskConcluida"><i class="fa-solid fa-check fa-sm" style="color: #ffffff;"></i></a>
                     </div>
                 </div>
             </div>

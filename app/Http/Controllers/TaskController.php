@@ -47,7 +47,6 @@ class TaskController
 
             header('Location: /home/show');
             exit;
-            
         } catch (Exception $e) {
             echo json_encode(array('success' => false, 'message' => $e->getMessage()));
             exit;
@@ -61,5 +60,26 @@ class TaskController
         $tasks = $tasks->getById('task', ['userId' => $_SESSION[LOGGED]->userId, 'categoryId' => $request->parametro]);
 
         $this->view('taskListCategory', ['task' => $tasks]);
+    }
+
+
+    public function showTaskConcluida()
+    {
+        $tasks = new Database;
+
+        $tasks = $tasks->getById('task', ['userId' => $_SESSION[LOGGED]->userId, 'status' => 'concluido']);
+
+        $this->view('taskListCategory', ['task' => $tasks]);
+    }
+    public function updateStatus($request)
+    {
+        $task = new Database();
+
+        $id = $request->parametro;
+
+        $task->update('task', ['status' => 'concluido'], "taskId = $id");
+
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit();
     }
 }

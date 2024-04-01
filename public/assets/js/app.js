@@ -43,7 +43,6 @@ $(document).ready(function () {
   });
 });
 
-
 // Register
 
 $(document).ready(function () {
@@ -72,11 +71,22 @@ $(document).ready(function () {
   })
 })
 
-
 function openLeftMenu() {
   document.getElementById("leftMenu").style.display = "block";
 }
 
 function closeLeftMenu() {
   document.getElementById("leftMenu").style.display = "none";
+}
+
+function menuShow() {
+  const sidebar = document.querySelector('.nav');
+  sidebar.style.display = 'flex';
+  sidebar.style.transition = 'transform 0.3s ease';
+
+}
+
+function hideSidebar() {
+  const sidebar = document.querySelector('.nav');
+  sidebar.style.display = 'none';
 }

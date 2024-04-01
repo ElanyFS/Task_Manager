@@ -1,5 +1,5 @@
 <?php
-session_set_cookie_params(360);
+session_set_cookie_params(3600);
 session_start();
 
 require "vendor/autoload.php";

@@ -91,4 +91,33 @@ class Database
         $statement  = $this->connection->prepare($sql);
         return $statement->execute($fields);
     }
+
+    public function updateStatus()
+    {
+        $sql = "update task set status = 'pendente'";
+        $statement  = $this->connection->prepare($sql);
+
+        return $statement->execute();
+    }
+
+    public function update($table, $fields, $conditions)
+    {
+        $setClause = '';
+        foreach ($fields as $key => $value) {
+            $setClause .= "$key = :$key, ";
+        }
+
+        $setClause = rtrim($setClause, ', ');
+
+        $sql = "update {$table} set {$setClause} where {$conditions}";
+
+        $statement = $this->connection->prepare($sql);
+
+        // Executa a declaração SQL com os parâmetros
+        foreach ($fields as $key => $value) {
+            $statement->bindValue(":$key", $value);
+        }
+
+        return $statement->execute();
+    }
 }

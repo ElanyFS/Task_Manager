@@ -6,6 +6,7 @@
 
 body {
   background-position: 0% 10%;
+  overflow: hidden;
 }
 
 header {
@@ -30,6 +31,17 @@ main {
 section {
   display: grid;
   place-items: center;
+  overflow: auto;
+  max-height: calc(100vh - 100px);
+}
+
+section::-webkit-scrollbar{
+  width: 10px;
+}
+
+section::-webkit-scrollbar-thumb{
+  background-color: #888;
+  border-radius: 5px; 
 }
 
 footer {
@@ -53,12 +65,43 @@ footer {
 }
 
 #buttonUser {
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
   border-radius: 50px;
   text-align: center;
   border: solid 1px #1969ca;
   cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
 }
 
 .dataMes {
@@ -408,4 +451,59 @@ tr:nth-child(even) {
 a i {
   text-decoration: none;
   color: #1969ca;
+}
+
+.nav{
+  background-color: white;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  display: none;
+  transition: transform 0.3s ease;
+}
+
+.nav ul {
+  width: 100%;
+  list-style: none;
+  display: none;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color:  rgba(255,255,255,0.2);
+  box-shadow: 10px 0 -10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  backdrop-filter: blur(10px);
+}
+
+.nav li {
+  width: 100%;
+  height: 50px;
+}
+
+.nav a {
+  width: 76%;
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+.nav a:hover {
+  background-color: #f0f0f0;
+}
+
+.nav li:first-child {
+  margin-right: auto;
+}
+
+a{
+  cursor: pointer;
 }
