@@ -27,11 +27,16 @@ ____________________________________________
 
 <i class="fas fa-code"></i> Tecnologias 
 
-* PHP 
-* MySQL
-* HTML
-* CSS
-* JavaScript
+* PHP  
+
+* MySQL  
+
+* HTML  
+
+* CSS  
+
+* JavaScript  
+
 
 <i class="fas fa-hourglass-start"></i> Inicialização
 
