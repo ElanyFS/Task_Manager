@@ -1,5 +1,5 @@
 
-(public/assets/img/home.png);
+![](public/assets/img/home.png)
 
 <i class="fa-solid fa-link"></i> Gerenciador de Tarefas
 
@@ -7,11 +7,11 @@
 
 Este projeto é uma aplicação de controle de tarefas, concebido para armazenar informações de usuários e suas respectivas tarefas. A plataforma oferece aos usuários a capacidade de gerenciar suas tarefas de forma eficiente, permitindo-lhes visualizar facilmente tarefas atrasadas, em andamento ou concluídas. Desenvolvido com o propósito de aprofundar o conhecimento em PHP, este projeto representa a aplicação prática de conceitos teóricos previamente estudados.
 
-(public/assets/img/loginReadme.png);
+![](public/assets/img/loginReadme.png)
 _______________________________________
-(public/assets/img/indexReadme.png);
+![](public/assets/img/indexReadme.png)
 ____________________________________________
-(public/assets/img/registrarTarefasReadme.png);
+![](public/assets/img/registrarTarefasReadme.png)
 
 <i class="fa-solid fa-screwdriver-wrench"></i> Funcionalidades
 
