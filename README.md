@@ -1,5 +1,3 @@
-![Screwdriver Wrench](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css)
-
 ![](public/assets/img/home.png)
 
 <i class="fa-solid fa-link"></i> Gerenciador de Tarefas
@@ -16,26 +14,26 @@ ____________________________________________
 
 <i class="fa-solid fa-screwdriver-wrench"></i> Funcionalidades
 
-* Cadastro de usuários
-* Usuários podem fazer login
-* Cadastrar tarefas
-* Listar tarefas
-* Listar tarefas de acordo com a categoria solicitada
-* Deletar tarefas
-* Atualização de tarefas
-* Atualização do status da tarefa com base na data de conclusão e data atual
+° Cadastro de usuários
+° Usuários podem fazer login
+° Cadastrar tarefas
+° Listar tarefas
+° Listar tarefas de acordo com a categoria solicitada
+° Deletar tarefas
+° Atualização de tarefas
+° Atualização do status da tarefa com base na data de conclusão e data atual
 
 <i class="fas fa-code"></i> Tecnologias 
 
-* PHP  
+° PHP  
 
-* MySQL  
+° MySQL  
 
-* HTML  
+° HTML  
 
-* CSS  
+° CSS  
 
-* JavaScript  
+° JavaScript  
 
 
 <i class="fas fa-hourglass-start"></i> Inicialização
@@ -51,3 +49,4 @@ Este projeto foi desenvolvido no ambiente Windows, utilizando as tecnologias men
 
 Status do Projeto
 
+![Status](Em-Desenvolvimento-gren)
