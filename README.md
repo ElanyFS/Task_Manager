@@ -16,24 +16,22 @@ ____________________________________________
 
 <i class="fa-solid fa-screwdriver-wrench"></i> Funcionalidades
 
-![Cadastro de usuários]()
-
-<i class="fas fa-circle fa-bounce fa-2xs"></i> Cadastro de usuários
-<i class="fas fa-circle fa-bounce fa-2xs"></i> Usuários podem fazer login
-<i class="fas fa-circle fa-bounce fa-2xs"></i> Cadastrar tarefas
-<i class="fas fa-circle fa-bounce fa-2xs"></i> Listar tarefas
-<i class="fas fa-circle fa-bounce fa-2xs"></i> Listar tarefas de acordo com a categoria solicitada
-<i class="fas fa-circle fa-bounce fa-2xs"></i> Deletar tarefas
-<i class="fas fa-circle fa-bounce fa-2xs"></i> Atualização de tarefas
-<i class="fas fa-circle fa-bounce fa-2xs"></i> Atualização do status da tarefa com base na data de conclusão e data atual
+* Cadastro de usuários
+* Usuários podem fazer login
+* Cadastrar tarefas
+* Listar tarefas
+* Listar tarefas de acordo com a categoria solicitada
+* Deletar tarefas
+* Atualização de tarefas
+* Atualização do status da tarefa com base na data de conclusão e data atual
 
 <i class="fas fa-code"></i> Tecnologias 
 
-<i class="fas fa-circle fa-bounce fa-2xs"></i> PHP
-<i class="fas fa-circle fa-bounce fa-2xs"></i> MySQL
-<i class="fas fa-circle fa-bounce fa-2xs"></i> HTML
-<i class="fas fa-circle fa-bounce fa-2xs"></i> CSS
-<i class="fas fa-circle fa-bounce fa-2xs"></i> JavaScript
+* PHP 
+* MySQL
+* HTML
+* CSS
+* JavaScript
 
 <i class="fas fa-hourglass-start"></i> Inicialização
 
