@@ -39,9 +39,6 @@ class LoginController
             echo json_encode(array('success' => true));
             exit; // Termina a execução após enviar a resposta JSON
 
-            // $logar = new HomeController;
-
-            // $logar->show();
         } catch (Exception $e) {
             echo json_encode(array('success' => false, 'message' => $e->getMessage()));
             exit;
