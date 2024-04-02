@@ -16,7 +16,7 @@ ____________________________________________
 
 <i class="fa-solid fa-screwdriver-wrench"></i> Funcionalidades
 
-![Cadastro de usuários](https://img.shields.io/badge/Cadastro%20de%20usu%C3%A1rios-%F0%9F%94%97-blue)
+![Cadastro de usuários]()
 
 <i class="fas fa-circle fa-bounce fa-2xs"></i> Cadastro de usuários
 <i class="fas fa-circle fa-bounce fa-2xs"></i> Usuários podem fazer login
