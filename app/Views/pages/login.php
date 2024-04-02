@@ -97,27 +97,7 @@
                     <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign In</a></p>
 
                 </form>
-            </div>
-
-            <!-- <div class="panels-container">
-        <div class="panel left-panel">
-            <div class="content">
-                <h3>Member of Brand?</h3>
-                <p>Paragrafro teste</p>
-                <button class="btn" id="sign-in-btn">Sign in</button>
-            </div>
-            <img src="/assets/img/login1.svg" alt="Login" class="image">
-        </div>
-
-        <div class="panel right-panel">
-            <div class="content">
-                <h3>New to Brand?</h3>
-                <p>Paragrafro teste</p>
-                <button class="btn" id="sign-up-btn">Sign up</button>
-            </div>
-            <img src="/assets/img/login.svg" alt="Login" class="image">
-        </div>
-    </div> -->
+</div>
         </div>
     </div>
 
