@@ -1,3 +1,4 @@
+![Screwdriver Wrench](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css)
 
 ![](public/assets/img/home.png)
 
@@ -13,7 +14,7 @@ _______________________________________
 ____________________________________________
 ![](public/assets/img/registrarTarefasReadme.png)
 
-<i class="fas fa-screwdriver-wrench"></i> Funcionalidades
+<i class="fa-solid fa-screwdriver-wrench"></i> Funcionalidades
 
 <i class="fas fa-circle fa-bounce fa-2xs"></i> Cadastro de usuários
 <i class="fas fa-circle fa-bounce fa-2xs"></i> Usuários podem fazer login
